@@ -5173,7 +5173,7 @@ float temperature_e_iolink::get_value()
 //-----------------------------------------------------------------------------
 float temperature_e_iolink::get_value()
    {
-   return analog_io_device::get_value();
+    return house_value.get_TE();
    }
 #endif
 //-----------------------------------------------------------------------------
@@ -6759,7 +6759,7 @@ void analog_io_device::direct_off()
 
 float analog_io_device::get_value()
     {
-    return house_value.get_TE();
+    return value;
     }
 //-----------------------------------------------------------------------------
 void analog_io_device::direct_set_value( float new_value )
