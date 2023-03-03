@@ -29,7 +29,17 @@ bool imitation_TE::is_p() const {
              exp(-(pow(x - m_expec, 2) / (2 * pow(st_deviation, 2)))) >
          0.01; // 0.01 вероятность того, что случайная величина находится на
                // [25,30].
-}
+bool imitation_TE::is_p() const 
+        {
+            // f(x)=1/(σ√2π)∙e^(-1/2∙((x-μ)/σ)^2) - функция Гаусса
+            // σ - стандартное отклонение
+            // x - случайная величина
+            // μ - математическое ожидание
+
+            return pow((st_deviation * sqrt(2 * M_PI)), -1) *
+                       exp(-(pow(x - m_expec, 2) / (2 * pow(st_deviation, 2)))) >
+                   0.01; 
+        }// 0.01 вероятность того, что случайная величина находится на [25,30]
 
 float imitation_TE::get_st_deviation() const { return float(sqrt(D)); }
 
