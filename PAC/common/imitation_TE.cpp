@@ -12,7 +12,10 @@ float imitation_TE::get_random() {
   return fv.at(index_fv) * 0.1f + iv.at(index_iv);
 }
 
-void imitation_TE::set_max(float max_in_range) { this->max = max_in_range; }
+void imitation_TE::set_max(float max_in_range) 
+   { 
+      this->max = max_in_range; 
+   }
 
 float imitation_TE::get_max() const { return max; }
 
