@@ -28,4 +28,16 @@ private:
   float get_random();
   bool is_p() const; // функция расчета вероятности
   unsigned get_index() const;
+private:
+        float D = 0.234f;           // дисперсия
+        float m_expec = 27.f;       // мат. ожидание
+        float st_deviation = 0.48f; // стандартное отклонение
+        float old_value = 25.7f;
+        float x = get_random();     // случайная величина
+        float max = 30.f;
+        float min = 20.f;
+
+        float get_random();
+        bool is_p() const;          // функция расчета вероятности
+        unsigned get_index() const;
 };
