@@ -8,8 +8,8 @@
 
 class imitation_TE {
 public:
-        imitation_TE();
         imitation_TE(float dispersion, float m_expec,float max_TE,float min_TE);
+        ~imitation_TE();
         float get_TE(); // возвращает значения температуры
         void set_max(float max);
         float get_max() const;
@@ -23,8 +23,8 @@ private:
         float max_TE;
         float min_TE;
         float x;  // случайная величина
-        std::unique_ptr<float[]> iarr;
-        std::unique_ptr<float[]> flarr;
+        float* iarr = nullptr;
+        float* flarr= nullptr;
 
         float get_random();
         bool is_p() const;          // функция расчета вероятности
