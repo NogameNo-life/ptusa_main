@@ -8,6 +8,7 @@
 
 class imitation_TE {
 public:
+        imitation_TE();
         imitation_TE(float dispersion, float m_expec,float max_TE,float min_TE);
         float get_TE(); // возвращает значения температуры
         void set_max(float max);
@@ -16,10 +17,9 @@ public:
         float get_min() const;
         float get_st_deviation() const;
 private:
-        float dispersion;           // дисперсия
+        float dispersion;     // дисперсия
         float m_expec;       // мат. ожидание
         float st_deviation; // стандартное отклонение
-        float old_value;
         float max_TE;
         float min_TE;
         float x;  // случайная величина
@@ -29,4 +29,5 @@ private:
         float get_random();
         bool is_p() const;          // функция расчета вероятности
         unsigned get_index() const;
+        void initial_arrays(float min_TE,float max_TE);
 };
