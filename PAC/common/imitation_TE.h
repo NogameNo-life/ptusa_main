@@ -6,10 +6,10 @@
 #include <vector>
 #include <memory>
 
-class imitation_TE {
+class analog_emulator {
 public:
-        imitation_TE(float dispersion, float m_expec, float min_TE, float max_TE);
-        float get_TE(); // возвращает значения температуры
+        analog_emulator( float dispersion = 0.238f, float m_expec = 27.f, float min_TE = 20.f, float max_TE = 30.f );
+        float get_value(); // возвращает значения температуры
         void set_max(float max_in_range);
         float get_max() const;
         void set_min(float min_in_range);
