@@ -1,8 +1,8 @@
 #include "analog_emulator.h"
 
 analog_emulator::analog_emulator( float dispersion, float m_expec,
-    float min_TE, float max_TE ) : dispersion( dispersion ),
-    m_expec( m_expec ), min_TE( min_TE ), max_TE( max_TE )
+    float min_TE, float max_TE , float x) : dispersion( dispersion ),
+    m_expec( m_expec ), min_TE( min_TE ), max_TE( max_TE ), x( x )
     {
     initial_arrays( min_TE, max_TE );
     st_deviation = get_st_deviation();

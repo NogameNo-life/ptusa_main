@@ -10,7 +10,7 @@ class analog_emulator
     {
     public:
         analog_emulator( float dispersion = 0.238f, float m_expec = 27.f,
-            float min_TE = 20.f, float max_TE = 30.f );
+            float min_TE = 20.f, float max_TE = 30.f, float x = 1.f );
 
         float get_value();  // возвращает значения температуры
         void set_max( float max_in_range );
