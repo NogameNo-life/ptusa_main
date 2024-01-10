@@ -1,6 +1,6 @@
 /*
 ** Lua binding: PAC_dev
-** Generated automatically by tolua++-1.0.92 on Thu Sep 28 15:33:35 2023.
+** Generated automatically by tolua++-1.0.92 on Wed Jan 10 10:27:55 2024.
 */
 
 #ifndef __cplusplus
@@ -342,6 +342,69 @@ static int tolua_PAC_dev_i_DO_device_set_state00(lua_State* tolua_S)
 #ifndef TOLUA_RELEASE
  tolua_lerror:
  tolua_error(tolua_S,"#ferror in function 'set_state'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: get_count_of_state_changes of class  i_DO_device */
+#ifndef TOLUA_DISABLE_tolua_PAC_dev_i_DO_device_get_count_of_state_changes00
+static int tolua_PAC_dev_i_DO_device_get_count_of_state_changes00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"i_DO_device",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  i_DO_device* self = (i_DO_device*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'get_count_of_state_changes'", NULL);
+#endif
+  {
+   int tolua_ret = (int)  self->get_count_of_state_changes();
+   tolua_pushnumber(tolua_S,(lua_Number)tolua_ret);
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'get_count_of_state_changes'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: reset_state_changes_counter of class  i_DO_device */
+#ifndef TOLUA_DISABLE_tolua_PAC_dev_i_DO_device_reset_state_changes_counter00
+static int tolua_PAC_dev_i_DO_device_reset_state_changes_counter00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"i_DO_device",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  i_DO_device* self = (i_DO_device*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'reset_state_changes_counter'", NULL);
+#endif
+  {
+   self->reset_state_changes_counter();
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'reset_state_changes_counter'.",&tolua_err);
  return 0;
 #endif
 }
@@ -1592,6 +1655,69 @@ static int tolua_PAC_dev_i_motor_get_amperage00(lua_State* tolua_S)
 #ifndef TOLUA_RELEASE
  tolua_lerror:
  tolua_error(tolua_S,"#ferror in function 'get_amperage'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: get_count_of_state_changes of class  i_motor */
+#ifndef TOLUA_DISABLE_tolua_PAC_dev_i_motor_get_count_of_state_changes00
+static int tolua_PAC_dev_i_motor_get_count_of_state_changes00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"i_motor",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  i_motor* self = (i_motor*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'get_count_of_state_changes'", NULL);
+#endif
+  {
+   int tolua_ret = (int)  self->get_count_of_state_changes();
+   tolua_pushnumber(tolua_S,(lua_Number)tolua_ret);
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'get_count_of_state_changes'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: reset_state_changes_counter of class  i_motor */
+#ifndef TOLUA_DISABLE_tolua_PAC_dev_i_motor_reset_state_changes_counter00
+static int tolua_PAC_dev_i_motor_reset_state_changes_counter00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"i_motor",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  i_motor* self = (i_motor*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'reset_state_changes_counter'", NULL);
+#endif
+  {
+   self->reset_state_changes_counter();
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'reset_state_changes_counter'.",&tolua_err);
  return 0;
 #endif
 }
@@ -4041,6 +4167,69 @@ static int tolua_PAC_dev_valve_get_state00(lua_State* tolua_S)
 #ifndef TOLUA_RELEASE
  tolua_lerror:
  tolua_error(tolua_S,"#ferror in function 'get_state'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: get_count_of_state_changes of class  valve */
+#ifndef TOLUA_DISABLE_tolua_PAC_dev_valve_get_count_of_state_changes00
+static int tolua_PAC_dev_valve_get_count_of_state_changes00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"valve",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  valve* self = (valve*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'get_count_of_state_changes'", NULL);
+#endif
+  {
+   int tolua_ret = (int)  self->get_count_of_state_changes();
+   tolua_pushnumber(tolua_S,(lua_Number)tolua_ret);
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'get_count_of_state_changes'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: reset_state_changes_counter of class  valve */
+#ifndef TOLUA_DISABLE_tolua_PAC_dev_valve_reset_state_changes_counter00
+static int tolua_PAC_dev_valve_reset_state_changes_counter00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"valve",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  valve* self = (valve*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'reset_state_changes_counter'", NULL);
+#endif
+  {
+   self->reset_state_changes_counter();
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'reset_state_changes_counter'.",&tolua_err);
  return 0;
 #endif
 }
@@ -14674,6 +14863,8 @@ TOLUA_API int tolua_PAC_dev_open (lua_State* tolua_S)
    tolua_function(tolua_S,"direct_off",tolua_PAC_dev_i_DO_device_direct_off00);
    tolua_function(tolua_S,"instant_off",tolua_PAC_dev_i_DO_device_instant_off00);
    tolua_function(tolua_S,"set_state",tolua_PAC_dev_i_DO_device_set_state00);
+   tolua_function(tolua_S,"get_count_of_state_changes",tolua_PAC_dev_i_DO_device_get_count_of_state_changes00);
+   tolua_function(tolua_S,"reset_state_changes_counter",tolua_PAC_dev_i_DO_device_reset_state_changes_counter00);
   tolua_endmodule(tolua_S);
   tolua_cclass(tolua_S,"i_AI_device","i_AI_device","",NULL);
   tolua_beginmodule(tolua_S,"i_AI_device");
@@ -14859,6 +15050,8 @@ TOLUA_API int tolua_PAC_dev_open (lua_State* tolua_S)
    tolua_function(tolua_S,"reverse",tolua_PAC_dev_i_motor_reverse00);
    tolua_function(tolua_S,"get_linear_speed",tolua_PAC_dev_i_motor_get_linear_speed00);
    tolua_function(tolua_S,"get_amperage",tolua_PAC_dev_i_motor_get_amperage00);
+   tolua_function(tolua_S,"get_count_of_state_changes",tolua_PAC_dev_i_motor_get_count_of_state_changes00);
+   tolua_function(tolua_S,"reset_state_changes_counter",tolua_PAC_dev_i_motor_reset_state_changes_counter00);
   tolua_endmodule(tolua_S);
   tolua_cclass(tolua_S,"signal_column","signal_column","device",NULL);
   tolua_beginmodule(tolua_S,"signal_column");
@@ -14971,6 +15164,8 @@ TOLUA_API int tolua_PAC_dev_open (lua_State* tolua_S)
    tolua_function(tolua_S,"instant_off",tolua_PAC_dev_valve_instant_off00);
    tolua_function(tolua_S,"set_state",tolua_PAC_dev_valve_set_state00);
    tolua_function(tolua_S,"get_state",tolua_PAC_dev_valve_get_state00);
+   tolua_function(tolua_S,"get_count_of_state_changes",tolua_PAC_dev_valve_get_count_of_state_changes00);
+   tolua_function(tolua_S,"reset_state_changes_counter",tolua_PAC_dev_valve_reset_state_changes_counter00);
    tolua_function(tolua_S,"get_on_fb_value",tolua_PAC_dev_valve_get_on_fb_value00);
    tolua_function(tolua_S,"get_off_fb_value",tolua_PAC_dev_valve_get_off_fb_value00);
    tolua_constant(tolua_S,"V_LOWER_SEAT",valve::V_LOWER_SEAT);

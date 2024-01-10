@@ -272,6 +272,14 @@ class i_DO_device: public i_DI_device
         /// @param new_state - новое состояние устройства.
         virtual void set_state( int new_state );
 
+        /// @brief Получение количества изменений состояния утсройства.
+        /// 
+        /// @return - количество смен состояния устройства из нулевого состояния.
+        virtual int get_count_of_state_changes() = 0;
+
+        /// @brief  Сброс количества изменений состояния утсройства.
+        virtual void reset_state_changes_counter() = 0;
+
     protected:
         /// @brief Установка нового состояния устройства.
         ///
@@ -292,6 +300,9 @@ class i_DO_device: public i_DI_device
         /// @return true - ручной режим включен.
         /// @return false - ручной режим выключен.
         virtual bool get_manual_mode() const = 0;
+
+        /// @brief Проверка изменения состояния устройства
+        virtual void check_state_changes() = 0;
     };
 //-----------------------------------------------------------------------------
 /// @brief Устройство на на основе аналогового входа.
@@ -691,13 +702,6 @@ class device : public i_DO_AO_device, public par_device
             return sub_type;
             }
 
-        /// @brief Получение количества включений утсройства.
-		int get_active_stat()
-		{
-                check_changes_state();
-		return inclusions_counter;
-		}
-
         /// @brief Установка дополнительных свойств, значения которых -
         /// устройства.
         ///
@@ -737,8 +741,16 @@ class device : public i_DO_AO_device, public par_device
 
         void set_emulation( bool new_emulation_state );
 
-        /// @brief Сброс статистики
-        void reset_stat();
+        /// @brief Получение количества изменений состояния утсройства.
+        /// 
+        /// @return - количество смен состояния устройства из нулевого состояния.
+        int get_count_of_state_changes() override
+            {
+            return state_changes_counter;
+            }
+
+        /// @brief  Сброс количества изменений состояния утсройства.
+        void reset_state_changes_counter() override;
 
         analog_emulator& get_emulator();
 
@@ -756,6 +768,9 @@ class device : public i_DO_AO_device, public par_device
             return C_MAX_DESCRIPTION;
             }
 
+        /// @brief Проверка изменения состояния устройства
+        void check_state_changes() override;
+
     private:
         u_int_4 s_number;            ///< Последовательный номер устройства.
 
@@ -772,11 +787,8 @@ class device : public i_DO_AO_device, public par_device
         bool emulation = false;
         analog_emulator emulator;
         
-        int inclusions_counter = 0; ///< счетчик включений устройства
+        int state_changes_counter = 0; ///< счетчик включений устройства
         int prev_state = 0;
-
-        /// @brief Проверка изменения состояния 
-        void check_changes_state();
     };
 //-----------------------------------------------------------------------------
 /// @brief Устройство с дискретными входами/выходами.
@@ -4951,6 +4963,15 @@ class device_manager: public i_Lua_save_device
             for ( u_int i = 0; i < project_devices.size(); i++ )
                 {
                 project_devices[ i ]->evaluate_io();
+                }
+            }
+
+        /// @brief Проверка изменения состояния всех устройств
+        void check_devices_states()
+            {
+            for( u_int i = 0; i < project_devices.size(); i++ )
+                {
+                project_devices[ i ]->check_state_changes();
                 }
             }
 

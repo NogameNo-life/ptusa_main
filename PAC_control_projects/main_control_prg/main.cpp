@@ -178,6 +178,8 @@ int main( int argc, const char *argv[] )
         sleep_ms( sleep_time_ms );
 #endif // DEBUG_NO_IO_MODULES
 
+        G_DEVICE_MANAGER()->check_devices_states();
+
         G_DEVICE_MANAGER()->evaluate_io();
 
         valve::evaluate();
